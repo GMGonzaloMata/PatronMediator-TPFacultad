@@ -4,13 +4,13 @@ const User2 = require('../src/user2');
 const User1 = require('../src/user1');
 const User3 = require('../src/user3');
 
-    test('Definir chat room', () =>{
+    test('Crear chat room', () =>{
         const chatRoom = new ChatRoom();
         expect(typeof chatRoom).toBe('object');
     }
     )
 
-    test('Definir user', () =>{
+    test('Crear user', () =>{
         const user = new User();
         expect(typeof user).toBe('object');
     }
@@ -71,7 +71,7 @@ const User3 = require('../src/user3');
       
       });
 
-      test('Cada usuario envia un mensaje al chat room y cada usuario recibe el mensaje enviado por los otros usuarios:', () => {
+      test('Cada usuario envia un mensaje al chat room y cada usuario recibe el mensaje enviado por los 2 otros usuarios:', () => {
         // Crea una instancia de la sala de chat
         const chatRoom = new ChatRoom();
       
@@ -86,8 +86,10 @@ const User3 = require('../src/user3');
       
         expect(user1.mensajes[0]).toBe('Hola soy usuario2');
         expect(user1.mensajes[1]).toBe('Hola soy usuario3');
+
         expect(user2.mensajes[0]).toBe('Hola soy usuario1');
         expect(user2.mensajes[1]).toBe('Hola soy usuario3');
+
         expect(user3.mensajes[0]).toBe('Hola soy usuario1');
         expect(user3.mensajes[1]).toBe('Hola soy usuario2');
       
